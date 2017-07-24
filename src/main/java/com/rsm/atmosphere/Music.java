@@ -9,11 +9,11 @@ import javax.swing.JOptionPane;
 
 public class Music {
 
-	static Sequencer player;
-	static String musicPath = "src/main/resources/Trilha/LeGrange.mid";
-	int repeat = 10;
+	private static Sequencer player;
+	private static String musicPath = "src/main/resources/Trilha/LeGrange.mid";
+	private static int repeat = 10;
 
-	public void playMusic() {
+	public static void playMusic() {
 
 		try {
 			player = MidiSystem.getSequencer();

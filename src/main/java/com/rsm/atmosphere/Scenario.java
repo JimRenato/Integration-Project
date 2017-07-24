@@ -48,11 +48,7 @@ public class Scenario extends JFrame {
 
     JButton playNowB = new JButton();
 
-    Human human = new Human();
-    Yeti yeti = new Yeti();
-    Cabin cabin = new Cabin();
-
-    // Método Construtor.
+    // Constructor.
     public Scenario() {
         super("World");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -63,7 +59,7 @@ public class Scenario extends JFrame {
 
     }
 
-    // This method adds all the Container.
+    // Adds all to Container.
     public void addItems() {
 
         humanJL = new JLabel(humanStop);
@@ -133,8 +129,8 @@ public class Scenario extends JFrame {
         container.add(wallDownJL);
     }
 
-    // Class with the action button PlayNow.
-    public class buttonPlayNow implements ActionListener {
+    // The action button PlayNow.
+    private class buttonPlayNow implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
             if ((e.getModifiers() & MouseEvent.BUTTON1_MASK) != 0) {
@@ -146,7 +142,7 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Game Initialization method.
+    // Game Initialization.
     public void play(Human human, Yeti yeti, Cabin cabin) throws InterruptedException {
 
         while (menu == true) {
@@ -155,20 +151,20 @@ public class Scenario extends JFrame {
         artificialIntelligence(human, yeti, cabin);
     }
 
-    // Method that checks which the end of the game.
+    // Checks which the end of the game.
     public void theEnd(Human human, Cabin cabin) {
 
         if (human.getLive() == false) {
             setYetiIcon(yetiWins);
             theEnd1JL.setVisible(true);
             yetiVictory = yetiVictory + 1;
-            System.out.println("Fim da Jogada! Yeti Venceu!");
+            System.out.println("End of Play! Yeti wins!");
             System.out.println("-----------------------------------------------------");
         } else if (cabin.isOpen() == false) {
             setYetiIcon(yetiStop);
             theEnd2JL.setVisible(true);
             humanVictory = humanVictory + 1;
-            System.out.println("Fim da Jogada! Humano Venceu!");
+            System.out.println("End of Play! Human wins!");
             System.out.println("-----------------------------------------------------");
         }
 
@@ -176,7 +172,7 @@ public class Scenario extends JFrame {
 
     }
 
-    // Method that checks if the player wants to play again.
+    // Checks if the player wants to play again.
     public void playAgain(ActionEvent eventoBotao) {
 
         int playAgain = JOptionPane.showConfirmDialog(null, "Do you want to play again?");
@@ -190,7 +186,6 @@ public class Scenario extends JFrame {
             theEnd2JL.setVisible(false);
             closeYetiX = false;
             closeYetiY = false;
-            cabin.setOpen(true);
             setCabinIcon(cabin1I);
 
         } else {
@@ -218,22 +213,22 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Method that changes the image of the Yeti.
+    // Changes the image of the Yeti.
     public void setYetiIcon(Icon yetiIcon) {
         this.yetiJL.setIcon(yetiIcon);
     }
 
-    // Method that changes the image of the Human.
+    // Changes the image of the Human.
     public void setHumanIcon(Icon humanIcon) {
         this.humanJL.setIcon(humanIcon);
     }
 
-    // Method that changes the image of the Cabin.
+    // Changes the image of the Cabin.
     public void setCabinIcon(Icon cabinIcon) {
         this.cabinJL.setIcon(cabinIcon);
     }
 
-    // Method changes the Yeti image depending on the current Human position.
+    // Changes the Yeti image depending on the current Human position.
     public void positionJLYeti(Yeti yeti, Human human) {
 
         if (yeti.getPositionX() > human.getPositionX()) {
@@ -244,7 +239,7 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Method exchanging the Human image if he is going to the Cabin.
+    // Changes the Human image if he's going to the Cabin.
     public void positionJLHumanRunToCabin(Human human, Cabin cabin) {
 
         if (human.getPositionX() > cabin.getPositionX()) {
@@ -255,7 +250,7 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Method exchanging the Human image if he is running away from Yeti.
+    // Changes the Human image if he's running away from Yeti.
     public void positionJLHumanRunAway(Human human, Yeti yeti) {
 
         if (human.getPositionX() < yeti.getPositionX()) {
@@ -266,7 +261,7 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Method that prints the Console the current positions of Characters.
+    // Prints the Console the current positions of Characters.
     public void printPosition(Human human, Yeti yeti, Cabin cabin) {
         System.out.println(
                 "Position Cabin X = " + cabin.getPositionX() + " | " + "Position Cabin Y = " + cabin.getPositionY());
@@ -277,7 +272,7 @@ public class Scenario extends JFrame {
         System.out.println("-----------------------------------------------------");
     }
 
-    // Method places the characters randomly.
+    // Places the characters randomly.
     public void randomObjectPlace(Human human, Yeti yeti, Cabin cabin) {
         yetiJL.setLocation(yeti.randomPositionX(1100), yeti.randomPositionY(500));
         humanJL.setLocation(human.randomPositionX(1100), human.randomPositionY(500));
@@ -288,7 +283,7 @@ public class Scenario extends JFrame {
         cabinJL.setVisible(true);
     }
 
-    // Method does not allow the human and the cabin exit scenario.
+    // Does not allow the human and the cabin exit scenario.
     public void theWall(Human human, Cabin cabin) {
         if (human.getPositionX() <= wallLeftJL.getX()) {
             human.setPositionX(human.getPositionX() + 1);
@@ -327,7 +322,7 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Method verifies that Human is in the same position of the Yeti.
+    // Verifies that Human is in the same position of the Yeti.
     public void compareYetiHuman(Yeti yeti, Human human) {
 
         if (yeti.getPositionX() == human.getPositionX() && yeti.getPositionY() == human.getPositionY()
@@ -340,7 +335,7 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Method verifies that Human is in the same position of the cabin.
+    // Verifies that Human is in the same position of the cabin.
     public void compareHumanCabin(Human human, Cabin cabin) {
 
         if (human.getPositionX() == cabin.getPositionX() && human.getPositionY() == cabin.getPositionY()
@@ -351,8 +346,7 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Method checks whether the human is near the Yeti to decide if he runs
-    // away.
+    // Checks whether the human is near the Yeti to decide if he runs away.
     public void compareBestChoise(Human human, Yeti yeti, Cabin cabin) {
 
         if (human.getPositionX() > yeti.getPositionX()) {
@@ -389,8 +383,7 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Method verifies that Human is alive, if so it makes the movement of the
-    // Human fleeing the Yeti.
+    // If Human is alive he flees from the Yeti
     public void checkHumanLiveRunYeti(Human human, Yeti yeti, Cabin cabin) {
 
         if (human.getLive() == true) {
@@ -401,8 +394,7 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Method verifies that Human is alive, and if so he is moving towards the
-    // Cabin.
+    // If Human is alive he's moving towards the Cabin.
     public void checkHumanLiveRunToCabin(Human human, Yeti yeti, Cabin cabin) {
 
         if (human.getLive() == true) {
@@ -413,12 +405,12 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Method that guides the way of AI actions.
+    // Guides the way of AI actions.
     public void artificialIntelligence(Human human, Yeti yeti, Cabin cabin) throws InterruptedException {
 
         randomObjectPlace(human, yeti, cabin);
 
-        while (human.getLive() == true && cabin.isOpen() == true) {
+        while (human.getLive() && cabin.isOpen()) {
 
             theWall(human, cabin);
             compareYetiHuman(yeti, human);

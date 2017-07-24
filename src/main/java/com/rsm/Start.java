@@ -10,9 +10,8 @@ public class Start extends Scenario {
 
 	public static void main(String[] args) throws InterruptedException {
 
+		Music.playMusic();
 		Scenario world = new Scenario();
-		Music music = new Music();
-		music.playMusic();
 		world.addItems();
 
 		while (true) {
