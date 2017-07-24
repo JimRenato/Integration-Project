@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 public class Music {
 
 	static Sequencer player;
-	static String musicPath = "C:\\Users\\renat\\workspace\\YetiStrikesBackAStar\\Trilha\\LeGrange.mid";
+	static String musicPath = "src/main/resources/Trilha/LeGrange.mid";
 	int repeat = 10;
 
 	public void playMusic() {
