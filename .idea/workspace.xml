@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20e63fb6-0b7d-4815-a609-9d16b1d6c4ef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/.classpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/.settings/org.eclipse.jdt.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/Cabin1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/Cabin2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/Opening.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/Snow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/TheEnd1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/TheEnd2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/YetiLeft.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/YetiRight.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/YetiStop.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/YetiWins.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/humanLeft.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/humanRight.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Imagens/humanStop.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/Trilha/LeGrange.mid" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/bin/atmosphere/Music.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/bin/atmosphere/Scenario$buttonPlayNow.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/bin/atmosphere/Scenario.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/bin/characters/Cabin.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/bin/characters/Character.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/bin/characters/Human.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/bin/characters/Yeti.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/bin/start/Start.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/src/atmosphere/Music.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/src/atmosphere/Scenario.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/src/characters/Cabin.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/src/characters/Character.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/src/characters/Human.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/src/characters/Yeti.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YetiStrikesBack/src/start/Start.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -47,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Start.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Start.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rsm/Start.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,7 +27,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scenario.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Scenario.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rsm/atmosphere/Scenario.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3262">
@@ -196,24 +164,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="rsm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yetiStrikesBack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yetiStrikesBack" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rsm" type="462c0819:PsiDirectoryNode" />
-              <item name="atmosphere" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yetiStrikesBack" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yetiStrikesBack" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rsm" type="462c0819:PsiDirectoryNode" />
-              <item name="characters" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -367,7 +317,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="-3" width="1311" height="771" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -377,9 +326,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2537431" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -429,16 +378,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rsm/atmosphere/Scenario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3262">
-          <caret line="239" column="25" lean-forward="false" selection-start-line="239" selection-start-column="25" selection-end-line="239" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rsm/characters/Cabin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -476,7 +415,17 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rsm/Start.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rsm/atmosphere/Scenario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3262">
+          <caret line="239" column="25" lean-forward="false" selection-start-line="239" selection-start-column="25" selection-end-line="239" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
