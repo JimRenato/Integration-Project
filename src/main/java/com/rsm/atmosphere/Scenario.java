@@ -32,36 +32,32 @@ public class Scenario extends JFrame {
     private JLabel theEnd1JL;
     private JLabel theEnd2JL;
 
-    private Icon yetiStop = new ImageIcon("src/main/resources/Imagens/YetiStop.gif");
-    private Icon yetiRight = new ImageIcon("src/main/resources/Imagens/YetiRight.gif");
-    private Icon yetiLeft = new ImageIcon("src/main/resources/Imagens/YetiLeft.gif");
-    private Icon yetiWins = new ImageIcon("src/main/resources/Imagens/YetiWins.gif");
-    private Icon humanStop = new ImageIcon("src/main/resources/Imagens/humanStop.gif");
-    private Icon humanRight = new ImageIcon("src/main/resources/Imagens/humanRight.gif");
-    private Icon humanLeft = new ImageIcon("src/main/resources/Imagens/humanLeft.gif");
-    private Icon cabin1I = new ImageIcon("src/main/resources/Imagens/Cabin1.png");
-    private Icon cabin2I = new ImageIcon("src/main/resources/Imagens/Cabin2.png");
-    private Icon openingI = new ImageIcon("src/main/resources/Imagens/Opening.gif");
-    private Icon theEnd1I = new ImageIcon("src/main/resources/Imagens/TheEnd1.png");
-    private Icon theEnd2I = new ImageIcon("src/main/resources/Imagens/TheEnd2.png");
-    private Icon snowI = new ImageIcon("src/main/resources/Imagens/Snow.png");
+    private Icon yetiStop = new ImageIcon("src/main/resources/images/yeti-stoped.gif");
+    private Icon yetiRight = new ImageIcon("src/main/resources/images/yeti-right.gif");
+    private Icon yetiLeft = new ImageIcon("src/main/resources/images/yeti-left.gif");
+    private Icon yetiWins = new ImageIcon("src/main/resources/images/yeti-celebrating.gif");
+    private Icon humanStop = new ImageIcon("src/main/resources/images/human-stoped.gif");
+    private Icon humanRight = new ImageIcon("src/main/resources/images/human-right.gif");
+    private Icon humanLeft = new ImageIcon("src/main/resources/images/human-left.gif");
+    private Icon cabin1I = new ImageIcon("src/main/resources/images/cabin-opened.png");
+    private Icon cabin2I = new ImageIcon("src/main/resources/images/cabin-closed.png");
+    private Icon openingI = new ImageIcon("src/main/resources/images/opening.gif");
+    private Icon theEnd1I = new ImageIcon("src/main/resources/images/the-end-yeti.png");
+    private Icon theEnd2I = new ImageIcon("src/main/resources/images/the-end-human.png");
 
-    JButton playNowB = new JButton();
+    private JButton playNowB = new JButton();
 
-    // Constructor.
     public Scenario() {
         super("World");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setSize(1200, 600);
+        Icon snowI = new ImageIcon("src/main/resources/images/snow.png");
         setContentPane(new JLabel(snowI));
         container = getContentPane();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-
     }
 
-    // Adds all to Container.
     public void addItems() {
-
         humanJL = new JLabel(humanStop);
         humanJL.setSize(100, 100);
         humanJL.setLocation(0, 0);
@@ -129,12 +125,9 @@ public class Scenario extends JFrame {
         container.add(wallDownJL);
     }
 
-    // The action button PlayNow.
     private class buttonPlayNow implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-
             if ((e.getModifiers() & MouseEvent.BUTTON1_MASK) != 0) {
-
                 playNowB.setVisible(false);
                 openingJL.setVisible(false);
                 menu = false;
@@ -142,43 +135,30 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Game Initialization.
     public void play(Human human, Yeti yeti, Cabin cabin) throws InterruptedException {
-
-        while (menu == true) {
+        while (menu) {
             repaint();
         }
         artificialIntelligence(human, yeti, cabin);
     }
 
-    // Checks which the end of the game.
-    public void theEnd(Human human, Cabin cabin) {
-
-        if (human.getLive() == false) {
+    private void theEnd(Human human, Cabin cabin) {
+        if (!human.getLive()) {
             setYetiIcon(yetiWins);
             theEnd1JL.setVisible(true);
             yetiVictory = yetiVictory + 1;
-            System.out.println("End of Play! Yeti wins!");
-            System.out.println("-----------------------------------------------------");
-        } else if (cabin.isOpen() == false) {
+        } else if (!cabin.isOpen()) {
             setYetiIcon(yetiStop);
             theEnd2JL.setVisible(true);
             humanVictory = humanVictory + 1;
-            System.out.println("End of Play! Human wins!");
-            System.out.println("-----------------------------------------------------");
         }
-
-        playAgain(null);
-
+        playAgain();
     }
 
-    // Checks if the player wants to play again.
-    public void playAgain(ActionEvent eventoBotao) {
-
+    private void playAgain() {
         int playAgain = JOptionPane.showConfirmDialog(null, "Do you want to play again?");
 
         if (playAgain == JOptionPane.YES_OPTION) {
-
             humanJL.setVisible(false);
             yetiJL.setVisible(false);
             cabinJL.setVisible(false);
@@ -187,7 +167,6 @@ public class Scenario extends JFrame {
             closeYetiX = false;
             closeYetiY = false;
             setCabinIcon(cabin1I);
-
         } else {
             if (humanVictory == 0) {
                 JOptionPane.showMessageDialog(null, "Human did not win and Yeti wons " + yetiVictory + " times!");
@@ -199,60 +178,47 @@ public class Scenario extends JFrame {
             if (yetiVictory == 0) {
                 JOptionPane.showMessageDialog(null, "Human wons " + humanVictory + " times and Yeti did not win!");
                 JOptionPane.showMessageDialog(null, "See you later!");
-                System.out.println("Human wons " + humanVictory + " times and Yeti did not win!");
                 dispose();
                 System.exit(0);
             } else {
                 JOptionPane.showMessageDialog(null,
                         "Human wons " + humanVictory + " times and Yeti wons " + yetiVictory + " times!");
                 JOptionPane.showMessageDialog(null, "See you later!");
-                System.out.println("Human wons " + humanVictory + " times and Yeti wons " + yetiVictory + " times!");
                 dispose();
                 System.exit(0);
             }
         }
     }
 
-    // Changes the image of the Yeti.
-    public void setYetiIcon(Icon yetiIcon) {
+    private void setYetiIcon(Icon yetiIcon) {
         this.yetiJL.setIcon(yetiIcon);
     }
 
-    // Changes the image of the Human.
-    public void setHumanIcon(Icon humanIcon) {
+    private void setHumanIcon(Icon humanIcon) {
         this.humanJL.setIcon(humanIcon);
     }
 
-    // Changes the image of the Cabin.
-    public void setCabinIcon(Icon cabinIcon) {
+    private void setCabinIcon(Icon cabinIcon) {
         this.cabinJL.setIcon(cabinIcon);
     }
 
-    // Changes the Yeti image depending on the current Human position.
-    public void positionJLYeti(Yeti yeti, Human human) {
-
+    private void positionJLYeti(Yeti yeti, Human human) {
         if (yeti.getPositionX() > human.getPositionX()) {
             setYetiIcon(yetiLeft);
-
         } else {
             setYetiIcon(yetiRight);
         }
     }
 
-    // Changes the Human image if he's going to the Cabin.
-    public void positionJLHumanRunToCabin(Human human, Cabin cabin) {
-
+    private void positionJLHumanRunToCabin(Human human, Cabin cabin) {
         if (human.getPositionX() > cabin.getPositionX()) {
             setHumanIcon(humanLeft);
-
         } else {
             setHumanIcon(humanRight);
         }
     }
 
-    // Changes the Human image if he's running away from Yeti.
-    public void positionJLHumanRunAway(Human human, Yeti yeti) {
-
+    private void positionJLHumanRunAway(Human human, Yeti yeti) {
         if (human.getPositionX() < yeti.getPositionX()) {
             setHumanIcon(humanLeft);
 
@@ -261,19 +227,7 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Prints the Console the current positions of Characters.
-    public void printPosition(Human human, Yeti yeti, Cabin cabin) {
-        System.out.println(
-                "Position Cabin X = " + cabin.getPositionX() + " | " + "Position Cabin Y = " + cabin.getPositionY());
-        System.out.println(
-                "Position Yeti X = " + yeti.getPositionX() + " | " + "Position Yeti Y = " + yeti.getPositionY());
-        System.out.println(
-                "Position Human X = " + human.getPositionX() + " | " + "Position Human Y = " + human.getPositionY());
-        System.out.println("-----------------------------------------------------");
-    }
-
-    // Places the characters randomly.
-    public void randomObjectPlace(Human human, Yeti yeti, Cabin cabin) {
+    private void randomObjectPlace(Human human, Yeti yeti, Cabin cabin) {
         yetiJL.setLocation(yeti.randomPositionX(1100), yeti.randomPositionY(500));
         humanJL.setLocation(human.randomPositionX(1100), human.randomPositionY(500));
         cabinJL.setLocation(cabin.randomPositionX(1100), cabin.randomPositionY(500));
@@ -283,48 +237,38 @@ public class Scenario extends JFrame {
         cabinJL.setVisible(true);
     }
 
-    // Does not allow the human and the cabin exit scenario.
-    public void theWall(Human human, Cabin cabin) {
+    private void theWall(Human human, Cabin cabin) {
         if (human.getPositionX() <= wallLeftJL.getX()) {
             human.setPositionX(human.getPositionX() + 1);
         }
-
         if (human.getPositionX() >= wallRightJL.getX()) {
             human.setPositionX(human.getPositionX() - 1);
         }
-
         if (human.getPositionY() <= wallTopJL.getY()) {
             human.setPositionY(human.getPositionY() + 1);
         }
-
         if (human.getPositionY() >= wallDownJL.getY()) {
             human.setPositionY(human.getPositionY() - 1);
         }
-
         if (cabin.getPositionX() <= wallLeftJL.getX() + 30) {
             cabin.setPositionX(cabin.getPositionX() + 50);
             cabinJL.setLocation(cabin.getPositionX(), cabin.getPositionY());
         }
-
         if (cabin.getPositionX() >= wallRightJL.getX() - 30) {
             cabin.setPositionX(cabin.getPositionX() - 50);
             cabinJL.setLocation(cabin.getPositionX(), cabin.getPositionY());
         }
-
         if (cabin.getPositionY() <= wallTopJL.getY() + 30) {
             cabin.setPositionY(cabin.getPositionY() + 50);
             cabinJL.setLocation(cabin.getPositionX(), cabin.getPositionY());
         }
-
         if (cabin.getPositionY() >= wallDownJL.getY() - 30) {
             cabin.setPositionY(cabin.getPositionY() - 50);
             cabinJL.setLocation(cabin.getPositionX(), cabin.getPositionY());
         }
     }
 
-    // Verifies that Human is in the same position of the Yeti.
-    public void compareYetiHuman(Yeti yeti, Human human) {
-
+    private void compareYetiHuman(Yeti yeti, Human human) {
         if (yeti.getPositionX() == human.getPositionX() && yeti.getPositionY() == human.getPositionY()
                 || (yeti.getPositionX() - 1) == human.getPositionX() && yeti.getPositionY() == human.getPositionY()
                 || yeti.getPositionX() == human.getPositionX() && (yeti.getPositionY() - 1) == human.getPositionY()
@@ -335,58 +279,48 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Verifies that Human is in the same position of the cabin.
-    public void compareHumanCabin(Human human, Cabin cabin) {
-
+    private void compareHumanCabin(Human human, Cabin cabin) {
         if (human.getPositionX() == cabin.getPositionX() && human.getPositionY() == cabin.getPositionY()
-                && human.getLive() == true) {
+                && human.getLive()) {
             cabin.setOpen(false);
             humanJL.setVisible(false);
             setCabinIcon(cabin2I);
         }
     }
 
-    // Checks whether the human is near the Yeti to decide if he runs away.
-    public void compareBestChoise(Human human, Yeti yeti, Cabin cabin) {
-
+    private void compareBestChoise(Human human, Yeti yeti, Cabin cabin) {
         if (human.getPositionX() > yeti.getPositionX()) {
-            if ((human.getPositionX() - yeti.getPositionX() <= 15) && closeYetiX == false) {
+            if ((human.getPositionX() - yeti.getPositionX() <= 15) && !closeYetiX) {
                 closeYetiX = true;
             }
         }
-
         if (human.getPositionX() < yeti.getPositionX()) {
-            if ((human.getPositionX() - yeti.getPositionX() >= -15) && closeYetiX == false) {
+            if ((human.getPositionX() - yeti.getPositionX() >= -15) && !closeYetiX) {
                 closeYetiX = true;
             }
         }
-
         if (human.getPositionY() > yeti.getPositionY()) {
-            if ((human.getPositionY() - yeti.getPositionY() <= 15) && closeYetiY == false) {
+            if ((human.getPositionY() - yeti.getPositionY() <= 15) && !closeYetiY) {
                 closeYetiY = true;
             }
         }
 
         if (human.getPositionY() < yeti.getPositionY()) {
-            if ((human.getPositionY() - yeti.getPositionY() >= -15) && closeYetiY == false) {
+            if ((human.getPositionY() - yeti.getPositionY() >= -15) && !closeYetiY) {
                 closeYetiY = true;
             }
         }
-
-        if ((closeYetiX == true && closeYetiY == true)) {
-            checkHumanLiveRunYeti(human, yeti, cabin);
+        if ((closeYetiX && closeYetiY)) {
+            checkHumanLiveRunYeti(human, yeti);
             positionJLHumanRunAway(human, yeti);
-
         } else {
             checkHumanLiveRunToCabin(human, yeti, cabin);
             positionJLHumanRunToCabin(human, cabin);
         }
     }
 
-    // If Human is alive he flees from the Yeti
-    public void checkHumanLiveRunYeti(Human human, Yeti yeti, Cabin cabin) {
-
-        if (human.getLive() == true) {
+    private void checkHumanLiveRunYeti(Human human, Yeti yeti) {
+        if (human.getLive()) {
             yeti.toHunt(human);
             yetiJL.setLocation(yeti.getPositionX(), yeti.getPositionY());
             human.runAway(yeti);
@@ -394,10 +328,8 @@ public class Scenario extends JFrame {
         }
     }
 
-    // If Human is alive he's moving towards the Cabin.
-    public void checkHumanLiveRunToCabin(Human human, Yeti yeti, Cabin cabin) {
-
-        if (human.getLive() == true) {
+    private void checkHumanLiveRunToCabin(Human human, Yeti yeti, Cabin cabin) {
+        if (human.getLive()) {
             yeti.toHunt(human);
             yetiJL.setLocation(yeti.getPositionX(), yeti.getPositionY());
             human.runToCabin(cabin);
@@ -405,17 +337,13 @@ public class Scenario extends JFrame {
         }
     }
 
-    // Guides the way of AI actions.
-    public void artificialIntelligence(Human human, Yeti yeti, Cabin cabin) throws InterruptedException {
-
+    private void artificialIntelligence(Human human, Yeti yeti, Cabin cabin) throws InterruptedException {
         randomObjectPlace(human, yeti, cabin);
 
         while (human.getLive() && cabin.isOpen()) {
-
             theWall(human, cabin);
             compareYetiHuman(yeti, human);
             compareHumanCabin(human, cabin);
-            printPosition(human, yeti, cabin);
             compareBestChoise(human, yeti, cabin);
             positionJLYeti(yeti, human);
             Thread.sleep(10);

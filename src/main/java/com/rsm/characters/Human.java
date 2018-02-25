@@ -12,7 +12,6 @@ public class Human extends GameObject {
 		this.live = live;
 	}
 
-	// Compares the Human position with the Yeti and makes him flee the Yeti
 	public void runAway(Yeti yeti) {
 
 		if (this.getPositionX() < yeti.getPositionX()) {
@@ -29,7 +28,6 @@ public class Human extends GameObject {
 		}
 	}
 
-	// Compares the human position with Caban and causes it to go toward Cabin
 	public void runToCabin(Cabin cabin) {
 
 		if (this.getPositionX() > cabin.getPositionX()) {

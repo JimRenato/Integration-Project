@@ -8,21 +8,15 @@ import com.rsm.characters.Yeti;
 
 public class Start extends Scenario {
 
-	public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
 
-		Music.playMusic();
-		Scenario world = new Scenario();
-		world.addItems();
+        Music.playMusic();
+        Scenario world = new Scenario();
+        world.addItems();
+        world.setVisible(true);
 
-		while (true) {
-
-			world.setVisible(true);
-
-			Yeti yeti = new Yeti();
-			Human human = new Human();
-			Cabin cabin = new Cabin();
-
-			world.play(human, yeti, cabin);
-		}
-	}
+        while (true) {
+            world.play(new Human(), new Yeti(), new Cabin());
+        }
+    }
 }

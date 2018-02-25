@@ -1,8 +1,7 @@
 package com.rsm.characters;
 
+import javax.swing.*;
 import java.util.Random;
-
-import javax.swing.JLabel;
 
 public class GameObject extends JLabel {
 
