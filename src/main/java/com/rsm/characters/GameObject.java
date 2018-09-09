@@ -5,35 +5,43 @@ import java.util.Random;
 
 public class GameObject extends JLabel {
 
-	private int positionX, positionY;
+    private int positionX, positionY;
 
-	public Integer randomPositionX(Integer limit) {
-		Random random = new Random();
-		this.positionX = random.nextInt(limit);
+    public Integer randomPositionX() {
+        Random random = new Random();
+        this.positionX = random.nextInt(1520);
 
-		return positionX;
-	}
+        if (this.positionX <= 410) {
+            this.positionX = 410;
+        }
 
-	public Integer randomPositionY(Integer limit) {
-		Random random = new Random();
-		this.positionY = random.nextInt(limit);
+        return this.positionX;
+    }
 
-		return positionY;
-	}
+    public Integer randomPositionY() {
+        Random random = new Random();
+        this.positionY = random.nextInt(740);
 
-	public int getPositionX() {
-		return positionX;
-	}
+        if (this.positionY <= 180) {
+            this.positionY = 180;
+        }
 
-	public void setPositionX(int positionX) {
-		this.positionX = positionX;
-	}
+        return this.positionY;
+    }
 
-	public int getPositionY() {
-		return positionY;
-	}
+    public int getPositionX() {
+        return this.positionX;
+    }
 
-	public void setPositionY(int positionY) {
-		this.positionY = positionY;
-	}
+    public void setPositionX(int positionX) {
+        this.positionX = positionX;
+    }
+
+    public int getPositionY() {
+        return this.positionY;
+    }
+
+    public void setPositionY(int positionY) {
+        this.positionY = positionY;
+    }
 }

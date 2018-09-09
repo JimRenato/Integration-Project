@@ -50,7 +50,7 @@ public class Scenario extends JFrame {
     public Scenario() {
         super("World");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setSize(1200, 600);
+        setSize(1920, 1080);
         Icon snowI = new ImageIcon("src/main/resources/images/snow.png");
         setContentPane(new JLabel(snowI));
         container = getContentPane();
@@ -60,55 +60,55 @@ public class Scenario extends JFrame {
     public void addItems() {
         humanJL = new JLabel(humanStop);
         humanJL.setSize(100, 100);
-        humanJL.setLocation(0, 0);
+        humanJL.setLocation(400, 170);
         humanJL.setVisible(false);
 
         yetiJL = new JLabel(yetiStop);
         yetiJL.setSize(100, 100);
-        yetiJL.setLocation(100, 0);
+        yetiJL.setLocation(740, 170);
         yetiJL.setVisible(false);
 
         cabinJL = new JLabel(cabin1I);
         cabinJL.setSize(80, 100);
-        cabinJL.setLocation(100, 0);
+        cabinJL.setLocation(570, 170);
         cabinJL.setVisible(false);
 
         wallRightJL = new JLabel();
-        wallRightJL.setSize(70, 600);
-        wallRightJL.setLocation(1190, 0);
+        wallRightJL.setSize(10, 1080);
+        wallRightJL.setLocation(1520, 0);
         wallRightJL.setVisible(false);
 
         wallLeftJL = new JLabel();
-        wallLeftJL.setSize(80, 600);
-        wallLeftJL.setLocation(20, 0);
+        wallLeftJL.setSize(10, 1080);
+        wallLeftJL.setLocation(380, 0);
         wallLeftJL.setVisible(false);
 
         wallDownJL = new JLabel();
-        wallDownJL.setSize(800, 70);
-        wallDownJL.setLocation(0, 590);
+        wallDownJL.setSize(1920, 10);
+        wallDownJL.setLocation(0, 750);
         wallDownJL.setVisible(false);
 
         wallTopJL = new JLabel();
-        wallTopJL.setSize(800, 70);
-        wallTopJL.setLocation(0, 0);
+        wallTopJL.setSize(1920, 10);
+        wallTopJL.setLocation(0, 160);
         wallTopJL.setVisible(false);
 
         openingJL = new JLabel(openingI);
-        openingJL.setSize(1366, 768);
+        openingJL.setSize(1920, 1080);
         openingJL.setLocation(0, 0);
         openingJL.setVisible(true);
 
         theEnd1JL = new JLabel(theEnd1I);
         theEnd1JL.setSize(500, 150);
-        theEnd1JL.setLocation(400, 10);
+        theEnd1JL.setLocation(710, 210);
         theEnd1JL.setVisible(false);
 
         theEnd2JL = new JLabel(theEnd2I);
         theEnd2JL.setSize(500, 150);
-        theEnd2JL.setLocation(400, 10);
+        theEnd2JL.setLocation(710, 210);
         theEnd2JL.setVisible(false);
 
-        playNowB.setBounds(88, 250, 229, 54);
+        playNowB.setBounds(0, 0, 1920, 1080);
         playNowB.addActionListener(new buttonPlayNow());
         playNowB.setVisible(true);
 
@@ -135,11 +135,11 @@ public class Scenario extends JFrame {
         }
     }
 
-    public void play(Human human, Yeti yeti, Cabin cabin) throws InterruptedException {
+    public void play() throws InterruptedException {
         while (menu) {
             repaint();
         }
-        artificialIntelligence(human, yeti, cabin);
+        artificialIntelligence(new Human(), new Yeti(), new Cabin());
     }
 
     private void theEnd(Human human, Cabin cabin) {
@@ -228,9 +228,9 @@ public class Scenario extends JFrame {
     }
 
     private void randomObjectPlace(Human human, Yeti yeti, Cabin cabin) {
-        yetiJL.setLocation(yeti.randomPositionX(1100), yeti.randomPositionY(500));
-        humanJL.setLocation(human.randomPositionX(1100), human.randomPositionY(500));
-        cabinJL.setLocation(cabin.randomPositionX(1100), cabin.randomPositionY(500));
+        yetiJL.setLocation(yeti.randomPositionX(), yeti.randomPositionY());
+        humanJL.setLocation(human.randomPositionX(), human.randomPositionY());
+        cabinJL.setLocation(cabin.randomPositionX(), cabin.randomPositionY());
         theWall(human, cabin);
         yetiJL.setVisible(true);
         humanJL.setVisible(true);
